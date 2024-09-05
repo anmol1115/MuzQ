@@ -34,3 +34,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	queries := r.URL.Query()
 	fmt.Println(queries)
 }
+
+func homeHandler(w http.ResponseWriter, r *http.Request) {
+  http.ServeFile(w, r, "static/html/home.html")
+}
