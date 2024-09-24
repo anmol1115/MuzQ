@@ -42,7 +42,11 @@ body {
   height: 80%;
   border-radius: 10px;
   font-weight: normal;
-  text-shadow: 1px 1px 2px #333, -1px -1px 2px #333, -1px 1px 2px #333, 1px -1px 2px #333;
+  text-shadow:
+    1px 1px 2px #333,
+    -1px -1px 2px #333,
+    -1px 1px 2px #333,
+    1px -1px 2px #333;
 }
 
 .join {
@@ -71,3 +75,19 @@ body {
   }
 }
 
+.section {
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  height: 150%;
+  justify-content: space-around;
+}
+
+.section input {
+  font-size: 20px;
+  overflow-x: auto;
+  border: 2.5px solid #4caf50;
+  height: 35%;
+  width: 100%;
+  border-radius: 5px;
+}

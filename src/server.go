@@ -35,3 +35,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 func homeHandler(w http.ResponseWriter, r *http.Request) {
   http.ServeFile(w, r, "static/html/home.html")
 }
+
+func joinRoomHandler(w http.ResponseWriter, r *http.Request) {
+  http.ServeFile(w, r, "static/html/joinRoom.html")
+}
