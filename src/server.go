@@ -14,10 +14,7 @@ func loginHandler(w http.ResponseWriter, r *http.Request) {
 
 	state := getRandomString(16)
 	scope := "playlist-read-private"
-	c_id, _, err := getClientIdSecret()
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-	}
+	c_id, _ := getClientIdSecret()
 
 	params := url.Values{}
 	params.Add("client_id", c_id)
