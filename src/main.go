@@ -12,5 +12,6 @@ func main() {
   http.HandleFunc("/login", loginHandler)
   http.HandleFunc("/callback", callbackHandler)
   http.HandleFunc("/room/join", joinRoomHandler)
+  http.HandleFunc("/room/create", createRoomHandler)
   log.Fatal(http.ListenAndServe(":8080", nil))
 }

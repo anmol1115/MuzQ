@@ -8,4 +8,5 @@ services:
     volumes:
       - "./src:/app"
       - "./static:/app/static"
+      - "./templates:/app/templates"
     env_file: ".env"

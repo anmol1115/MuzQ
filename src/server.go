@@ -4,7 +4,10 @@ import (
 	"fmt"
 	"net/http"
   "net/url"
+  "html/template"
 )
+
+var templates = template.Must(template.ParseFiles("templates/html/createRoom.html"))
 
 func loginHandler(w http.ResponseWriter, r *http.Request) {
 	u, err := url.Parse("https://accounts.spotify.com/authorize?")
@@ -38,4 +41,11 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 
 func joinRoomHandler(w http.ResponseWriter, r *http.Request) {
   http.ServeFile(w, r, "static/html/joinRoom.html")
+}
+
+func createRoomHandler(w http.ResponseWriter, r *http.Request) {
+  code := getRandomString(6)
+  if err := templates.ExecuteTemplate(w, "createRoom.html", code); err != nil {
+    http.Error(w, err.Error(), http.StatusInternalServerError)
+  }
 }

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MuzQ</title>
+    <title>MuzQ - Create Room</title>
     <link rel="stylesheet" href="/static/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,11 +13,20 @@
     />
   </head>
   <body>
-    <div id="container">
-      <h1>MuzQ</h1>
-      <div>
-        <button type="submit" class="btn create" onclick="window.location.href='/room/create';">Create a Room</button>
-        <button type="submit" class="btn join" onclick="window.location.href='/room/join';">Join a Room</button>
+    <div class="div-holder">
+      <div class="holder">
+        <h1>Settings</h1>
+        <div class="radio-div">
+          <input type="radio">
+          <input type="radio">
+          <input type="radio">
+        </div>
+      </div>
+      <div class="holder">
+        <h1>{{.}}</h1>
+        <div class=test>
+          <button class="btn create">Create</button>
+        </div>
       </div>
     </div>
   </body>

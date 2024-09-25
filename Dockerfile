@@ -9,5 +9,6 @@ RUN go mod download
 
 COPY src/ .
 COPY static/ /app/static
+COPY templates/ /app/templates
 
 CMD ["air"]
