@@ -4,28 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MuzQ - Join Room</title>
-    <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="stylesheet" href="/static/css/global.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <div id="container">
+    <div class="container w-[40vw] h-[30vh]">
       <div>
-        <div class="section">
+        <div class="flex flex-col justify-around mb-2">
           <h3>Display Name</h3>
-          <input type="text" />
+          <input class="text-[20px] overflow-x-auto border-2 border-solid border-[#4caf50] rounded-[5px]" type="text" />
         </div>
-        <div class="section">
+        <div class="flex flex-col justify-around mt-2">
           <h3>Code</h3>
-          <input type="text" />
+          <input class="text-[20px] overflow-x-auto border-2 border-solid border-[#4caf50] rounded-[5px]" type="text" />
         </div>
       </div>
-      <div>
-        <button type="submit" class="btn join">Submit</button>
+      <div class="flex flex-row justify-evenly w-4/5 h-1/4">
+        <button type="submit" class="btn bg-[#4caf50]">Submit</button>
       </div>
     </div>
   </body>

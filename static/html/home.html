@@ -4,20 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MuzQ</title>
-    <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="stylesheet" href="/static/css/global.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <div id="container">
-      <h1>MuzQ</h1>
-      <div>
-        <button type="submit" class="btn create" onclick="window.location.href='/room/create';">Create a Room</button>
-        <button type="submit" class="btn join" onclick="window.location.href='/room/join';">Join a Room</button>
+    <div class="container w-[40vw] h-[30vh]">
+      <h1 class="text-3xl">MuzQ</h1>
+      <div class="flex flex-row justify-evenly items-center w-4/5 h-1/4">
+        <button
+          type="submit"
+          class="btn bg-[#008cba]"
+          onclick="window.location.href='/room/create';"
+        >
+          Create a Room
+        </button>
+        <button
+          type="submit"
+          class="btn bg-[#4caf50]"
+          onclick="window.location.href='/room/join';"
+        >
+          Join a Room
+        </button>
       </div>
     </div>
   </body>
