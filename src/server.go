@@ -7,7 +7,7 @@ import (
 	"net/url"
 )
 
-var templates = template.Must(template.ParseFiles("templates/html/createRoom.html"))
+var templates = template.Must(template.ParseFiles("/templates/html/createRoom.html"))
 
 func loginHandler(w http.ResponseWriter, r *http.Request) {
 	u, err := url.Parse("https://accounts.spotify.com/authorize?")
@@ -39,21 +39,19 @@ func loginHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func homeHandler(w http.ResponseWriter, r *http.Request) {
-  http.ServeFile(w, r, "static/html/home.html")
+  http.ServeFile(w, r, "/static/html/home.html")
 }
 
 func joinRoomHandler(w http.ResponseWriter, r *http.Request) {
-  http.ServeFile(w, r, "static/html/joinRoom.html")
+  http.ServeFile(w, r, "/static/html/joinRoom.html")
 }
 
 func createRoomHandler(w http.ResponseWriter, r *http.Request) {
   code := getRandomString(6)
-  // fmt.Println(r.URL.Query())
   code_verifier, state, err := readCookie(r)
   if err != nil {
     http.Error(w, err.Error(), http.StatusInternalServerError)
   }
-  // fmt.Println(code_verifier, state)
   if r.URL.Query()["state"][0] != state {
     http.Error(w, "State not matching", http.StatusInternalServerError)
   }

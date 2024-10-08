@@ -2,11 +2,24 @@ version: '3.8'
 services:
   app:
     container_name: "backend"
-    build: .
+    build:
+      context: .
+      dockerfile: src/Dockerfile
     ports:
       - "8080:8080"
     volumes:
       - "./src:/app"
-      - "./static:/app/static"
-      - "./templates:/app/templates"
+      - "./static:/static"
+      - "./templates:/templates"
     env_file: ".env"
+
+  db:
+    container_name: "database"
+    build:
+      context: .
+      dockerfile: db/Dockerfile
+    volumes:
+      - "./db/init.sql:/docker-entrypoint-initdb.d/init.sql"
+      - "./db/mysql_data:/var/lib/mysql"
+    environment:
+      MARIADB_ROOT_PASSWORD: d5Pq05J89wSQ
