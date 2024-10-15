@@ -14,32 +14,33 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <div class="flex flex-row">
+    <form action="/room/create/submit" method="POST" class="flex flex-row">
       <div class="container w-[40vw] h-[30vh] mr-2">
         <h1 class="text-3xl">Settings</h1>
         <div class="flex flex-row space-x-2 items-center justify-around w-4/5">
           <div class="flex flex-col justify-center w-4/5 h-1/4">
             <div class="flex flex-row space-x-2 items-center">
-              <input type="checkbox" />
+              <input name="guest_can_pause" type="checkbox" />
               <p>Guest can pause</p>
             </div>
             <div class="flex flex-row space-x-2 space-y-2 items-center">
-              <input type="checkbox" />
+              <input name="guest_can_queue" type="checkbox" />
               <p>Guest can queue</p>
             </div>
           </div>
           <div class="space-y-2">
             <h1>Display Name</h1>
-            <input type="text" class="inp focus:outline-none"/>
+            <input name="display_name" type="text" class="inp focus:outline-none"/>
           </div>
         </div>
       </div>
       <div class="container w-[40vw] h-[30vh] ml-2">
         <h1 class="text-3xl">{{.}}</h1>
+        <input type="hidden" name="code" value="{{.}}" />
         <div class="w-4/5 h-1/4 flex justify-center">
-          <button class="btn bg-[#008cba]">Create</button>
+          <button type="submit" class="btn bg-[#008cba]">Create</button>
         </div>
       </div>
-    </div>
+    </form>
   </body>
 </html>

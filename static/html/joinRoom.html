@@ -14,20 +14,20 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <div class="container w-[40vw] h-[30vh]">
+    <form action="/room/join/submit" method="POST" class="container w-[40vw] h-[30vh]">
       <div>
         <div class="flex flex-col justify-around mb-2">
           <h3>Display Name</h3>
-          <input class="inp focus:outline-none" type="text" />
+          <input name="display_name" class="inp focus:outline-none" type="text" />
         </div>
         <div class="flex flex-col justify-around mt-2">
           <h3>Code</h3>
-          <input class="inp focus:outline-none" type="text" />
+          <input name="code" class="inp focus:outline-none" type="text" />
         </div>
       </div>
       <div class="flex flex-row justify-evenly w-4/5 h-1/4">
         <button type="submit" class="btn bg-[#4caf50]">Submit</button>
       </div>
-    </div>
+    </form>
   </body>
 </html>
